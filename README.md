@@ -66,6 +66,15 @@ npm run test:owl-to-masp    # pytest tests for owl-to-masp.py (needs uv)
 
 Test fixtures live in `test_data/`; they are copies, so the tests do not depend on any profile or example repository.
 
+## Publishing
+
+Publishing to npm is done by `.github/workflows/publish.yml` when a GitHub release is published:
+
+1. Bump `version` in `package.json` (e.g. `npm version patch`) and push the commit and tag.
+2. Create a GitHub release from the tag. The workflow runs the tests and publishes to npm with provenance.
+
+The workflow uses npm trusted publishing, so no token is stored in GitHub. It has to be set up once, after the package exists on npm: `npm trust github @crate-works/ro-crate-masp-tools --file publish.yml --repo crate-works/ro-crate-masp-tools` (or on npmjs.com: package Settings → Trusted Publisher → GitHub Actions). The very first version therefore has to be published by hand by a member of the npm org (`npm publish`).
+
 ## Licence
 
 Apache-2.0

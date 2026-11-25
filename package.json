@@ -19,7 +19,9 @@
   "files": [
     "generate-masp-docs.js",
     "lib/",
-    "scripts/"
+    "scripts/*.js",
+    "scripts/owl-to-masp.py",
+    "scripts/owl-to-masp.spec.md"
   ],
   "scripts": {
     "test": "mocha",
