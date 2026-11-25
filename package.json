@@ -1,0 +1,56 @@
+{
+  "name": "@crate-works/ro-crate-masp-tools",
+  "version": "0.1.0",
+  "description": "Tools for RO-Crate MASP (Machine Actionable Schemas and Profiles): documentation generation, Crate-O mode files, OWL and schema.org conversion",
+  "keywords": [
+    "ro-crate",
+    "masp",
+    "profile",
+    "schema",
+    "documentation",
+    "crate-o"
+  ],
+  "bin": {
+    "generate-masp-docs": "./generate-masp-docs.js",
+    "generate-mode-file": "./scripts/generate-mode-file.js",
+    "mode-to-masp": "./scripts/mode-to-masp.js",
+    "generate-schema-org-crate": "./scripts/generate-schema-org-crate.js"
+  },
+  "files": [
+    "generate-masp-docs.js",
+    "lib/",
+    "scripts/"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "test:owl-to-masp": "uv run pytest test/owl-to-masp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crate-works/ro-crate-masp-tools.git"
+  },
+  "homepage": "https://github.com/crate-works/ro-crate-masp-tools#readme",
+  "bugs": {
+    "url": "https://github.com/crate-works/ro-crate-masp-tools/issues"
+  },
+  "license": "Apache-2.0",
+  "author": "ptsefton",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@crate-works/ro-crate-masp-validator": "^0.1.0",
+    "fs-extra": "^11.3.4",
+    "markdown-it": "^14.1.1",
+    "ro-crate": "^3.6.1",
+    "ro-crate-excel": "^1.1.3",
+    "yargs": "^18.0.0"
+  },
+  "devDependencies": {
+    "chai": "^6.2.1",
+    "mocha": "^11.7.5"
+  }
+}
