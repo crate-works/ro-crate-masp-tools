@@ -9,7 +9,7 @@ These tools came from the [ro-crate-masp](https://github.com/Language-Research-T
 ## Install
 
 ```bash
-npm install --save-dev github:crate-works/ro-crate-masp-tools
+npm install --save-dev @crate-works/ro-crate-masp-tools
 ```
 
 This puts the commands below on the path for `npm exec` and npm scripts.
@@ -73,7 +73,7 @@ Publishing to npm is done by `.github/workflows/publish.yml` when a GitHub relea
 1. Bump `version` in `package.json` (e.g. `npm version patch`) and push the commit and tag.
 2. Create a GitHub release from the tag. The workflow runs the tests and publishes to npm with provenance.
 
-The workflow uses npm trusted publishing, so no token is stored in GitHub. It has to be set up once, after the package exists on npm: `npm trust github @crate-works/ro-crate-masp-tools --file publish.yml --repo crate-works/ro-crate-masp-tools` (or on npmjs.com: package Settings → Trusted Publisher → GitHub Actions). The very first version therefore has to be published by hand by a member of the npm org (`npm publish`).
+The workflow uses npm trusted publishing, so no token is stored in GitHub. It has to be set up once by a member of the @crate-works npm org (version 0.1.0 was published by hand): `npm trust github @crate-works/ro-crate-masp-tools --file publish.yml --repo crate-works/ro-crate-masp-tools` (or on npmjs.com: package Settings → Trusted Publisher → GitHub Actions).
 
 ## Licence
 
